@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+/* HEADER OVERLAY STYLES  */
+.navbar-wrapper {
+  background-color: rgb(143, 202, 66);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar-wrapper .nav-list-items a {
   color: white;
+  text-decoration: none;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-wrapper .nav-list-items a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(240, 240, 240);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-@keyframes App-logo-spin {
+.navbar-wrapper .nav-list-items a:hover::after {
+  width: 100%;
+}
+/* HAMBURGER ICON STYLE  */
+@media (max-width: 991.98px) {
+  /* NAVBAR OVERLAY TOGGLE */
+
+  .navbarwrapper {
+    position: relative;
+    width: 29px;
+    cursor: pointer;
+    height: 25px;
+    z-index: 15;
+  }
+
+  .first {
+    background-color: #fff;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    border-radius: 20px;
+    right: 0;
+  }
+
+  .second {
+    background-color: #fff;
+    width: 70%;
+    height: 3px;
+    position: absolute;
+    right: 0;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  .third {
+    background-color: #fff;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    right: 0;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+
+  .animate .second {
+    opacity: 0;
+  }
+
+  .animate .first {
+    top: 11px;
+    transform: rotate(45deg);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
+      transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+  }
+
+  .animate .third {
+    top: -8px;
+    transform: rotate(-45deg);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
+      transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .overlay-nav {
+    transition: 0.7s ease !important;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2ba912e8;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+}
+
+.overlay-active {
+  z-index: 10;
+  transition: 0.7s ease !important;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.object-fit {
+  object-fit: contain;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.overlay-nav li {
+  transform: translateY(10px);
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  list-style-type: none;
+}
+
+.overlay-active ul li:nth-child(1) {
+  animation: animate_links 0.9s;
+  animation-delay: 0.2s;
+  transform: translateY(10px);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.overlay-active ul li:nth-child(2) {
+  animation: animate_links 0.9s;
+  animation-delay: 0.4s;
+  transform: translateY(10px);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.overlay-active ul li:nth-child(3) {
+  animation: animate_links 0.9s;
+  animation-delay: 0.6s;
+  transform: translateY(10px);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.overlay-active ul li:nth-child(4) {
+  animation: animate_links 0.9s;
+  animation-delay: 0.8s;
+  transform: translateY(10px);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.overlay-active ul li:nth-child(5) {
+  animation: animate_links 0.9s;
+  animation-delay: 1s;
+  transform: translateY(10px);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.overlay-active ul li:nth-child(6) {
+  animation: animate_links 0.9s;
+  animation-delay: 1.2s;
+  transform: translateY(10px);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate_links {
   from {
-    transform: rotate(0deg);
+    transform: translateY(20px);
+    opacity: 0;
   }
+
   to {
-    transform: rotate(360deg);
+    transform: translateY(-20px);
+    opacity: 1;
   }
 }
+
+.h-screen {
+  height: 100vh;
+}
+
+.fix-screen-height {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HEADER OVERLAY STYLES  */
