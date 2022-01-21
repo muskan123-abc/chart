@@ -1,7 +1,7 @@
 import React from "react";
-import { useScreenFixedProvider } from "../../contexts/ScreenFixedProvider";
+import { useScreenFixedProvider } from "../contexts/ScreenFixedProvider";
 import { useMediaQuery } from "react-responsive";
-import { headerData } from "./Helper";
+import { headerData } from "./common/data";
 
 const Header = () => {
   const { showOverlay, setShowOverlay } = useScreenFixedProvider();
