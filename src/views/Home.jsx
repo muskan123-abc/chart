@@ -1,10 +1,12 @@
 import React from "react";
+import { Charts } from "../Charts";
 import Faq from "../components/Faq";
 
 const Home = () => {
   return (
     <>
       <Faq />
+      <Charts />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-8">
